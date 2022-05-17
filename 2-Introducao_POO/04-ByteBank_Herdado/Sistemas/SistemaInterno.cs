@@ -9,7 +9,7 @@ namespace _04_ByteBank_Herdado.Sistemas
 {
     internal class SistemaInterno
     {
-        public bool Logar(Funcionario funcionario, string senha)
+        public bool Logar(Autenticavel funcionario, string senha)
         {
             bool usuarioAutenticado = funcionario.Autenticar(senha);
 

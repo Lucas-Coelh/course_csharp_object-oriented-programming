@@ -1,4 +1,5 @@
 ﻿using _04_ByteBank_Herdado.Funcionarios;
+using _04_ByteBank_Herdado.Sistemas;
 
 namespace _04_ByteBank_Herdado
 {
@@ -7,31 +8,33 @@ namespace _04_ByteBank_Herdado
 
         static void Main(string[] args)
         {
-            CalcularBonificacao();
-            
-                        
+            UsarSistema();
+
+
             Console.ReadLine();
 
+
         }
-        public static void CalcularBonificacao()
+        public static void UsarSistema()
         {
-            GerenciadorBonificacao gerenciadorBonificacao = new GerenciadorBonificacao();
+            SistemaInterno sistemaInterno = new SistemaInterno();
 
 
-            Designer lucas = new Designer("Lucas", 0, "044.988.785.23");
-            Diretor roberta = new Diretor("Roberta",0, "044.654.455.24");
-            Auxiliar pedro = new Auxiliar("Pedro",0, "044.222.888.99");
-            GerenteDeConta guilherme = new GerenteDeConta("Guilherme",0, "001.007.296.23");
+            Diretor lais = new Diretor("Lais", 0, "044.654.455.24");
+            GerenteDeConta guilherme = new GerenteDeConta("Guilherme", 0, "001.007.296.23");
+            ParceiroComercial douglas = new ParceiroComercial();
 
-            gerenciadorBonificacao.Registrar(guilherme);
-            gerenciadorBonificacao.Registrar(pedro);
-            gerenciadorBonificacao.Registrar(roberta); 
-            gerenciadorBonificacao.Registrar(lucas);
 
-            Console.WriteLine(gerenciadorBonificacao.GetTotalBonificacao());
+            lais.Senha = "ABC";
+            guilherme.Senha = "123";
+            douglas.Senha = "568";
 
-            
+            sistemaInterno.Logar(lais, "ABC");
+            sistemaInterno.Logar(guilherme, "123");
+            sistemaInterno.Logar(douglas, "568");
+
+
         }
-        
+
     }
 }

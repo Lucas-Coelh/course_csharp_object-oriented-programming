@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace _04_ByteBank_Herdado.Funcionarios
 {
-    internal class GerenteDeConta : Funcionario
+    internal class GerenteDeConta : FuncionarioAutenticavel
     {
+        
         public GerenteDeConta(string nome, double salario, string cpf) : base(nome, 4000, cpf)
         {
             Console.WriteLine("Criando Gerente de Conta");
