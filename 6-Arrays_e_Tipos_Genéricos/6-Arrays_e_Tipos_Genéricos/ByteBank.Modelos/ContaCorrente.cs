@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ByteBank.Modelos
+﻿namespace ByteBank.Modelos
 {
     /// <summary>
-    /// Define uma Conta Corrente do banco ByteBank.
+    /// Define uma Conta Corrente do banco ByteBank
     /// </summary>
-    public class ContaCorrente
+
+    public class @object
     {
         private static int TaxaOperacao;
 
@@ -21,9 +16,9 @@ namespace ByteBank.Modelos
         public int ContadorTransferenciasNaoPermitidas { get; private set; }
 
         public int Numero { get; }
-        public int Agencia { get; }
+        public int NumeroAgencia { get; }
 
-        private double _saldo = 100;
+        private double _saldo;
         public double Saldo
         {
             get
@@ -42,11 +37,12 @@ namespace ByteBank.Modelos
         }
 
         /// <summary>
-        /// Cria uma instância de ContaCorrente com os argumentos utilizados.
+        /// Cria uma instancia de ContaCorrente com os argumentos utilizados.
         /// </summary>
-        /// <param name="agencia"> Representa o valor da propriedade <see cref="Agencia"/> e deve possuir um valor maior que zero. </param>
-        /// <param name="numero"> Representa o valor da propriedade <see cref="Numero"/> e deve possuir um valor maior que zero. </param>
-        public ContaCorrente(int agencia, int numero)
+        /// <param name="agencia"> Representa o valor da propriedade <see cref="NumeroAgencia"/> e deve possuir um valor maior que zero.</param>
+        /// <param name="numero"> Representa o valor da propriedade <see cref="Numero"/> e deve possuir um valor maior que zero.</param>
+        /// <exception cref="ArgumentException"></exception>
+        public @object(int agencia, int numero)
         {
             if (numero <= 0)
             {
@@ -58,7 +54,7 @@ namespace ByteBank.Modelos
                 throw new ArgumentException("O argumento numero deve ser maior que 0.", nameof(numero));
             }
 
-            Agencia = agencia;
+            NumeroAgencia = agencia;
             Numero = numero;
 
             TotalDeContasCriadas++;
@@ -66,11 +62,13 @@ namespace ByteBank.Modelos
         }
 
         /// <summary>
-        /// Realiza o saque e atualiza o valor da propriedade <see cref="Saldo"/>.
+        /// Realiza o saque e atualiza o valor da propiedade <see cref="Saldo"/>
         /// </summary>
-        /// <exception cref="ArgumentException"> Exceção lançada quando um valor negativo é utilizado no argumento <paramref name="valor"/>. </exception>
-        /// <exception cref="SaldoInsuficienteException"> Exceção lançada quando o valor de <paramref name="valor"/> é maior que o valor da propriedade <see cref="Saldo"/>. </exception>
-        /// <param name="valor"> Representa o valor do saque, deve ser maior que 0 e menor que o <see cref="Saldo"/>. </param>
+        /// <exception cref="ArgumentException"> Exceçao lançada quando um valor negativo é utilizado no argumento <paramref name="valor"/></exception>
+        /// <exception cref="SaldoInsuficienteException"> Exceçao lançada quando o valor de <paramref name="valor"/> é maior que a propiedade <paramref name="Saldo"/>o </exception>
+        /// <param name="valor"> Representa o valor do saque, deve ser maior que 0 e menor que o <paramref name="Saldo"/></param>
+        /// <exception cref="ArgumentException"></exception>
+        /// <exception cref="SaldoInsuficienteException"></exception>
         public void Sacar(double valor)
         {
             if (valor < 0)
@@ -92,7 +90,7 @@ namespace ByteBank.Modelos
             _saldo += valor;
         }
 
-        public void Transferir(double valor, ContaCorrente contaDestino)
+        public void Transferir(double valor, @object contaDestino)
         {
             if (valor < 0)
             {
@@ -111,6 +109,26 @@ namespace ByteBank.Modelos
 
             contaDestino.Depositar(valor);
         }
+
+        public override string ToString()
+        {
+            return $"Conta: {Numero}, Agência: {NumeroAgencia}";
+            //return $"Conta: {Numero}, Agência: {NumeroAgencia}, Saldo: {Saldo}";
+
+        }
+
+        public override bool Equals(object obj)
+        {
+            @object outraConta = obj as @object;
+
+            if (outraConta == null)
+            {
+                return false;
+            }
+
+            return Numero == outraConta.Numero && NumeroAgencia == outraConta.NumeroAgencia;
+        }
+
     }
 
 }
