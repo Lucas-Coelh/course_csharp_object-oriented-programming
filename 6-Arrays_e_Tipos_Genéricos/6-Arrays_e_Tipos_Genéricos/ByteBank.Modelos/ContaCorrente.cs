@@ -4,7 +4,7 @@
     /// Define uma Conta Corrente do banco ByteBank
     /// </summary>
 
-    public class @object
+    public class object
     {
         private static int TaxaOperacao;
 

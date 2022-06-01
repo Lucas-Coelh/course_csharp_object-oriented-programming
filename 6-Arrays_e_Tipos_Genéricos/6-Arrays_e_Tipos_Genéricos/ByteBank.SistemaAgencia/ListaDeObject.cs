@@ -52,7 +52,7 @@
             }
 
             _proximaPosicao--;
-            _itens[_proximaPosicao] = null;
+            //_itens[_proximaPosicao] = null;
         }
 
         public void EscreverListaNaTela()

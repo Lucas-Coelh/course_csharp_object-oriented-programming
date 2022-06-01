@@ -5,7 +5,7 @@ VisualStudioVersion = 17.2.32519.379
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBank.SistemaAgencia", "ByteBank.SistemaAgencia\ByteBank.SistemaAgencia.csproj", "{9E89680D-2F5B-456B-8712-E3E5FF08166B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBank.Modelos", "ByteBank.Modelos\ByteBank.Modelos.csproj", "{AA9BF83B-C383-4C14-911A-1AF9464E5022}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteBank.Modelos", "..\..\5-Strings_Expressoes_Regulares_Classe_Object\ByteBank.Modelos\ByteBank.Modelos.csproj", "{60F67322-AF45-44B7-92A3-7F5B095BBB63}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{9E89680D-2F5B-456B-8712-E3E5FF08166B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E89680D-2F5B-456B-8712-E3E5FF08166B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E89680D-2F5B-456B-8712-E3E5FF08166B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AA9BF83B-C383-4C14-911A-1AF9464E5022}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AA9BF83B-C383-4C14-911A-1AF9464E5022}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AA9BF83B-C383-4C14-911A-1AF9464E5022}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AA9BF83B-C383-4C14-911A-1AF9464E5022}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60F67322-AF45-44B7-92A3-7F5B095BBB63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60F67322-AF45-44B7-92A3-7F5B095BBB63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60F67322-AF45-44B7-92A3-7F5B095BBB63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60F67322-AF45-44B7-92A3-7F5B095BBB63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
